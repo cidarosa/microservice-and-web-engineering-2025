@@ -2,8 +2,8 @@
 **Material de apoio**
 ***
 
-- Spring Profiles
-- Maven Dependencies
+- [Spring Profiles](https://github.com/cidarosa/microservice-and-web-engineering-2025/tree/main/profiles)
+- [Maven Dependencies](https://github.com/cidarosa/microservice-and-web-engineering-2025/tree/main/maven-dependencies)
 
 ***
 
