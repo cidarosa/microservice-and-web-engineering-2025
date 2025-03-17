@@ -17,8 +17,10 @@ Os projetos (API, Microsserviços) serão versionados nos monorepos de cada turm
 ***
 ## Material de Apoio
 
-- [Spring Profiles](https://github.com/cidarosa/microservice-and-web-engineering-2025/tree/main/profiles)
+- [Git](https://github.com/cidarosa/microservice-and-web-engineering-2025/blob/main/git/comandos-git.md)
 - [Maven Dependencies](https://github.com/cidarosa/microservice-and-web-engineering-2025/tree/main/maven-dependencies)
+- [Spring Profiles](https://github.com/cidarosa/microservice-and-web-engineering-2025/tree/main/profiles)
+
 
 ***
 ## Links
