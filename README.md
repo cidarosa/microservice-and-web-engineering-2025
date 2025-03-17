@@ -21,6 +21,6 @@ Os projetos (API, Microsserviços) serão versionados nos monorepos de cada turm
 - [Maven Dependencies](https://github.com/cidarosa/microservice-and-web-engineering-2025/tree/main/maven-dependencies)
 
 ***
-## Links Interessantes
+## Links
 
 
