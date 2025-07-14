@@ -1,5 +1,7 @@
 # Microsserviço Pedidos
-## Carga Inicial no Bando de Dados para Teste
+## Carga Inicial no Banco de Dados para Teste
+
+File: `src/main/resources/import.sql`
 
 ```sql
 INSERT INTO tb_pedido(nome, cpf, data, status, valor_total) VALUES('Jon Snow', '123.456.789-36', '2025-05-25', 'REALIZADO', 540.0);
@@ -10,3 +12,6 @@ INSERT INTO tb_pedido(nome, cpf, data, status, valor_total) VALUES('Ayra Stark',
 INSERT INTO tb_item_do_pedido(quantidade, descricao, valor_unitario , pedido_id) VALUES(1, 'Smart TV LG LED', 3599.0 , 2);
 
 ```
+
+***
+
