@@ -7,6 +7,7 @@
 | [Repositório de Conteúdo](https://github.com/cidarosa/microservice-and-web-engineering-2025) |
 | [MS-Pagamentos - docs](https://github.com/cidarosa/microservice-and-web-engineering-2025/blob/main/MS-Pagamentos/docs/ms-pagamentos.md) |
 | [MS-Pedidos - docs](https://github.com/cidarosa/microservice-and-web-engineering-2025/blob/main/MS-Pedidos/docs/ms-pedidos.md) |
+| [MS-Produto - docs](https://github.com/cidarosa/microservice-and-web-engineering-2025/tree/main/MS-Produto) |
 
 ## Monorepo
 Os projetos (API, Microsserviços) serão versionados nos monorepos de cada turma.
