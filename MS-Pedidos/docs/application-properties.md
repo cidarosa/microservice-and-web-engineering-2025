@@ -1,0 +1,41 @@
+# MS-Pedidos
+## Application properties
+### Configurações da aplicação
+
+Path: `src/main/resources/application.properties`
+
+File name: `application.properties`
+
+```properties
+spring.application.name=ms-pedido
+
+spring.profiles.active=test
+spring.jpa.open-in-view=false
+
+# mesmas config. do Server
+eureka.client.register-with-eureka=true
+eureka.client.fetch-registry=true
+
+# É preciso passar a configuração eureka.client.serviceUrl.defaultZone
+# e o localhost 8081, onde o Eureka Server está recebendo as requisições
+eureka.client.serviceUrl.defaultZone=http://localhost:8081/eureka
+
+#define a porta para o Eureka controlar em qual porta ele vai subir o serviço
+server.port=0
+
+# Kafka
+# spring.kafka.bootstrap-servers=localhost:9092
+# spring.kafka.bootstrap-servers=kafka:9092 - em container
+# ip do windows
+spring.kafka.bootstrap-servers=192.168.0.41:9093
+spring.kafka.consumer.group-id=grupo-ms
+spring.kafka.consumer.auto-offset-reset=earliest
+spring.kafka.producer.key-serializer=org.apache.kafka.common.serialization.StringSerializer
+spring.kafka.producer.value-serializer=org.apache.kafka.common.serialization.StringSerializer
+spring.kafka.consumer.key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
+spring.kafka.consumer.value-deserializer=org.apache.kafka.common.serialization.StringDeserializer
+
+# Identificador para a instância, para executar várias ao mesmo tempo, se necessário.
+# Identificador: nome+número inteiro de 1 a 50.
+eureka.instance.instance-id=${spring.application.name}:${random.int[1,50]}
+```
