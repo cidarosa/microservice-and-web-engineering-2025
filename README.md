@@ -15,7 +15,7 @@ Os projetos (API, Microsserviços) serão versionados nos monorepos de cada turm
 | --- |
 | [Turma 3SIPF](https://github.com/cidarosa/microservices-hub-sipf) |
 | [Turma 3SIPG](https://github.com/cidarosa/microservices-hub-sipg) |
-| [Turma SIA](https://github.com/cidarosa/microservices-hub-sia) |
+
 
 ***
 ## Material de Apoio
