@@ -28,4 +28,9 @@ Os projetos (API, Microsserviços) serão versionados nos monorepos de cada turm
 ***
 ## Links
 
+[Como instalar o Node.js no Windows, Linux e macOS - Artigo Alura](https://www.alura.com.br/artigos/como-instalar-node-js-windows-linux-macos)
+
+[Node.JS: o que é, como funciona esse ambiente de execução JavaScript e um Guia para iniciar - Artigo Alura](https://www.alura.com.br/artigos/node-js)
+
+[Node.JS: Descomplicando o trabalho com diferentes versões - Artigo Alura](https://www.alura.com.br/artigos/descomplicando-o-trabalho-com-node)
 
