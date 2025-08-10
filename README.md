@@ -34,3 +34,6 @@ Os projetos (API, Microsserviços) serão versionados nos monorepos de cada turm
 
 [Node.JS: Descomplicando o trabalho com diferentes versões - Artigo Alura](https://www.alura.com.br/artigos/descomplicando-o-trabalho-com-node)
 
+[React: o que é, como funciona e um guia dessa popular ferramenta JS - Artigo Alura](https://www.alura.com.br/artigos/react-js)
+
+[Criando aplicações React com TypeScript usando Vite - Artigo Alura](https://www.alura.com.br/artigos/vite-criar-aplicacao-react-typescript?srsltid=AfmBOopuM_hIBmCp8Apyl-eSqpxG3K_WUT2ulQ9ZEnFQza5hw8xaaeAN)
