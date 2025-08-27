@@ -9,7 +9,4 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - mysql-data8:/var/lib/mysql   
-
-volumes:
-  mysql-data8:
+      - ./.data/mysql-data8:/var/lib/mysql  
