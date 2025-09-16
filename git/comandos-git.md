@@ -19,3 +19,21 @@ https://github.com/acnaweb/git
 | **Atualização de Dependências** | `chore: update lodash to version 4.17.21`             |
 | **Remoção de Funcionalidade** | `remove: delete deprecated user profile API endpoint`   |
 | **Configuração**            | `config: add ESLint configuration for React projects`      |
+
+## Criando branch
+
+```bash
+git checkout -b <branch-name>
+
+git add .
+
+git commit -m "description"
+
+git push origin <branch-name>
+
+git checkout main
+
+git merge <branch-name>
+
+git push origin main
+```
