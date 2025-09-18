@@ -20,6 +20,7 @@ https://github.com/acnaweb/git
 | **Remoção de Funcionalidade** | `remove: delete deprecated user profile API endpoint`   |
 | **Configuração**            | `config: add ESLint configuration for React projects`      |
 
+*** 
 ## Criando branch
 
 ```bash
@@ -37,3 +38,21 @@ git merge <branch-name>
 
 git push origin main
 ```
+
+### Resumo do Fluxo de Trabalho
+
+1. `main`: ter a versão inicial do seu projeto aqui.
+
+2. `git checkout -b aula01`: cria uma nova branch para a primeira aula, por exemplo.
+
+3. `Trabalhe na aula01`: fazer os `commits` com as alterações da aula.
+
+4. `git push origin aula01`: enviar sua `branch` para o `GitHub`.
+
+5. `git checkout main`: voltar para a `branch main`.
+
+6. `git merge aula01`: fazer o `merge` das alterações da `aula01` na `main`.
+
+7. `git push origin main`: enviar as alterações da `main` para o `GitHub`.
+
+Repetir os passos para a próxima aula, criar uma nova `branch` a partir da main já atualizada (`git checkout -b aula02`, por exemplo), e repitir o processo.
