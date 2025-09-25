@@ -76,7 +76,7 @@ export default function ListarCategorias() {
                         <IconButton
                           aria-label="editar"
                           component={Link}
-                          to={`/categorias/${categoria.id}`}
+                          to={`/categorias/${categoria.id}/editar`}
                         >
                           <Edit />
                         </IconButton>
