@@ -20,8 +20,7 @@ Os projetos (API, Microsserviços) serão versionados nos monorepos de cada turm
 
 [Turma 3SIPF](https://github.com/cidarosa/produto-fullstack-sipf)
 
-
-
+[Turma 3SIPG](https://github.com/cidarosa/produto-fullstack-sipg)
 
 
 ***
