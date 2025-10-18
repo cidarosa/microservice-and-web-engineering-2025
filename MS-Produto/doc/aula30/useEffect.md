@@ -49,11 +49,16 @@ useEffect(() => {
           msg = error.response.data.error || msg;
         }
         setError(msg);
-        setTimeout(() => setError(null), 4000);
+        setTimeout(() => {
+          // Redireciona e passa a mensagem de erro no 'state'
+          navigate("/produtos", {
+            state: { globalError: msg },
+          });
+        }, 3000);
       } finally {
         setIsLoading(false);
       }
     };
     loadFormData();
-  }, [produtoId]);
+  }, [produtoId, navegate]);
 ```
