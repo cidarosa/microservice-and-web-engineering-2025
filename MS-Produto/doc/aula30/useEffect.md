@@ -37,7 +37,7 @@ useEffect(() => {
         const valorDoBackend = produtoData.valor;
 
         // Converte o number do backend para string, tratando valores nulos/vazios
-        const valorInicialString = valorDoBackend ? String(valorDoBackend) : "";
+       const valorInicialString = valorDoBackend ? String(formatToBRL(valorDoBackend)) : "";
 
         // ATUALIZA O ESTADO AUXILIAR que é usado no TextField
         setRawValor(valorInicialString);
