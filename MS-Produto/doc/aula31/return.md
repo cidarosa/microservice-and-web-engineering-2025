@@ -1,8 +1,7 @@
 `src\pages\produtos\novo-produto\index.tsx`
 
 ```typescript
-// --- RENDERIZAÇÃO (JSX) ---
-  return (
+return (
     <Box sx={{ mt: 2, p: 4 }}>
       {/* MENSAGENS GLOBAIS DE SUCESSO/ERRO (Backend/Geral) */}
       {success && (
