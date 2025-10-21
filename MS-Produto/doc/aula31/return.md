@@ -1,9 +1,10 @@
-`src\pages\produtos\editar-produto\index.tsx`
+`src\pages\produtos\novo-produto\index.tsx`
 
 ```typescript
-return (
+// --- RENDERIZAÇÃO (JSX) ---
+  return (
     <Box sx={{ mt: 2, p: 4 }}>
-      {/* MENSAGENS GLOBAIS DE SUCESSO/ERRO */}
+      {/* MENSAGENS GLOBAIS DE SUCESSO/ERRO (Backend/Geral) */}
       {success && (
         <Alert severity="success" sx={{ mb: 2 }}>
           {success}
@@ -17,16 +18,17 @@ return (
       )}
 
       <Typography variant="h4" component="h1">
-        Editar Produto
+        Cadastrar Produto
       </Typography>
 
+      {/* 1. EXIBIÇÃO DE LOADING INICIAL */}
       {isLoading ? (
         <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
           <CircularProgress />
         </Box>
       ) : (
+        // 2. EXIBIÇÃO DO FORMULÁRIO (Somente se não houver erro inicial)
         !error && (
-          /* 3. FORMULÁRIO (SÓ APARECE SE NÃO ESTIVER CARREGANDO NEM TIVER ERRO INICIAL) */
           <Box
             component="form"
             onSubmit={handleSubmit}
@@ -44,23 +46,20 @@ return (
               autoFocus
               value={formData.nome}
               onChange={handleChange}
+              // onBlur para trimar espaços (boa prática)
               onBlur={() => {
-                // 1. Pega o valor atual do estado (que pode ter espaços)
                 const nomeAtual = formData.nome;
                 const nomeTrimado = nomeAtual.trim();
-
-                // 2. Verifica se houve alteração e atualiza o estado se necessário
                 if (nomeAtual !== nomeTrimado) {
                   setFormData((prevData) => ({
                     ...prevData,
-                    nome: nomeTrimado, // Salva o valor trimado de volta no formData
+                    nome: nomeTrimado,
                   }));
                 }
               }}
-              // 1. ATIVA O ESTILO DE ERRO (BORDA VERMELHA)
               error={!!formErrors.nome}
-              // 2. EXIBE A MENSAGEM DE ERRO (HELPER TEXT)
               helperText={formErrors.nome}
+              disabled={isSubmitting}
               sx={{ mb: 2 }}
             />
 
@@ -77,20 +76,18 @@ return (
               value={formData.descricao}
               onChange={handleChange}
               onBlur={() => {
-                // 1. Pega o valor atual do estado (que pode ter espaços)
                 const descricaoAtual = formData.descricao;
                 const descricaoTrimado = descricaoAtual.trim();
-
-                // 2. Verifica se houve alteração e atualiza o estado se necessário
                 if (descricaoAtual !== descricaoTrimado) {
                   setFormData((prevData) => ({
                     ...prevData,
-                    descricao: descricaoTrimado, // Salva o valor trimado de volta no formData
+                    descricao: descricaoTrimado,
                   }));
                 }
               }}
               error={!!formErrors.descricao}
               helperText={formErrors.descricao}
+              disabled={isSubmitting}
               sx={{ mb: 2 }}
             />
 
@@ -107,12 +104,11 @@ return (
               onBlur={handleBlurValor} // <<< CHAMA A LIMPEZA E SALVAMENTO FINAL
               error={!!formErrors.valor}
               helperText={formErrors.valor}
-              slotProps={{
-                input: {
-                  startAdornment: (
-                    <InputAdornment position="start">R$</InputAdornment>
-                  ),
-                },
+              disabled={isSubmitting}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">R$</InputAdornment>
+                ),
               }}
               sx={{ mb: 2 }}
             />
@@ -123,8 +119,8 @@ return (
               margin="normal"
               required
               sx={{ mb: 2 }}
-              // <<< Conecta o estado de erro ao FormControl >>>
               error={!!formErrors.categoriaId}
+              disabled={isSubmitting}
             >
               <InputLabel id="categoria-label">Categoria</InputLabel>
               <Select
@@ -135,7 +131,7 @@ return (
                   formData.categoriaId === ""
                     ? ""
                     : String(formData.categoriaId)
-                } // Converte para string para o Select
+                }
                 label="Categoria"
                 onChange={handleChange}
               >
@@ -148,7 +144,6 @@ return (
                   </MenuItem>
                 ))}
               </Select>
-              {/* <<< Exibe a mensagem de erro (helper text) >>> */}
               {formErrors.categoriaId && (
                 <Typography
                   variant="caption"
@@ -160,14 +155,14 @@ return (
               )}
             </FormControl>
 
-            {/* 5.  Multi-Select para Lojas */}
+            {/* 5. Multi-Select para Lojas */}
             <FormControl
               fullWidth
               margin="normal"
               required
               sx={{ mb: 2 }}
-              // <<< Conecta o estado de erro ao FormControl >>>
               error={!!formErrors.lojasId}
+              disabled={isSubmitting}
             >
               <InputLabel id="lojas">Lojas</InputLabel>
               <Select
@@ -175,13 +170,10 @@ return (
                 id="lojas-multiple-chip"
                 multiple
                 name="lojasId"
-                // O VALOR é o array de números (number[]) do seu state
                 value={formData.lojasId}
-                // SOLUÇÃO DE TIPAGEM: Usamos uma função anônima que recebe o evento tipado
-                // e passa para o handleChange, que aceita o SelectChangeEvent.
+                // Usamos uma função anônima para garantir a tipagem correta
                 onChange={(event) => handleChange(event as SelectChangeEvent)}
                 label="Lojas"
-                // renderValue é tipado com number[] para funcionar com o value
                 renderValue={(selectedIds: number[]) => (
                   <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
                     {selectedIds.map((id) => {
@@ -194,13 +186,11 @@ return (
                 )}
               >
                 {lojas.map((loja) => (
-                  // O valor do MenuItem também é numérico (number)
                   <MenuItem key={loja.id} value={loja.id}>
                     {loja.nome}
                   </MenuItem>
                 ))}
               </Select>
-              {/* <<< Exibe a mensagem de erro (helper text) >>> */}
               {formErrors.lojasId && (
                 <Typography
                   variant="caption"
@@ -212,15 +202,31 @@ return (
               )}
             </FormControl>
 
-            <Button
-              type="submit"
-              size="large"
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-              disabled={isSubmitting} // Desabilita o botão durante o submit
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "flex-end",
+                gap: 2,
+                mt: 3,
+              }}
             >
-              {isSubmitting ? <CircularProgress size={24} /> : "Salvar"}
-            </Button>
+              <Button
+                variant="outlined"
+                size="large"
+                onClick={() => navigate("/produtos")}
+                disabled={isSubmitting}
+              >
+                Cancelar
+              </Button>
+              <Button
+                type="submit"
+                size="large"
+                variant="contained"
+                disabled={isSubmitting} // Desabilita o botão durante o submit
+              >
+                {isSubmitting ? <CircularProgress size={24} /> : "Salvar"}
+              </Button>
+            </Box>
           </Box>
         )
       )}
