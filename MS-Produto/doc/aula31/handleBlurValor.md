@@ -2,7 +2,7 @@
 
 ```typescript
 const handleBlurValor = () => {
-    // ... (Lógica de handleBlurValor: Formatação e unmaskCurrency - Mantida do seu código)
+    
     const valorDigitado = rawValor;
 
     if (!valorDigitado) {

@@ -4,8 +4,7 @@ const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | SelectChangeEvent
   ) => {
     const { name, value } = e.target;
-    // ... (Lógica de handleChange: Valor, Categoria, Lojas, Textos - Mantida do seu código)
-
+    
     // 1. Lógica para o Campo VALOR (usa o state auxiliar rawValor)
     if (name === "valor") {
       const rawInput = value.replace(/[^\d,.]/g, "");
